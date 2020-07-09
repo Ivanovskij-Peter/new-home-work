@@ -575,6 +575,10 @@ img {
   border-color: rgba(157, 164, 189, 0.4);
 }
 
+.layout--price {
+  padding: 0;
+}
+
 .button-price__position {
   text-align: center;
 }
