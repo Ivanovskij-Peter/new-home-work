@@ -9,10 +9,10 @@
 	}
 }
 .footer {
-	background-color: $background-color-dkr;
+	// background-color: $background-color-dkr;
 }
 .layout--dk {
-	background-color: $background-color-dkr;
+	// background-color: $background-color-dkr;
 }
 
 .footer-text,
@@ -152,20 +152,6 @@
 	}
 }
 
-.footer__element--with-bg {
-	background-image: url(../images/footer-mob.png);
-	background-repeat: no-repeat;
-	// background-size: cover;
-	background-position: center;
-
-	@media screen and (min-width: 768px) {
-		background-image: url(../images/footer-tab.png);
-	}
-	@media screen and (min-width: 1200px) {
-		background-image: url(../images/footer-des.png);
-	}
-}
-
 .copyright__items--dark {
 	display: flex;
 	color: $primary-title-color-dk;
@@ -179,14 +165,14 @@
 	.footer__button--center {
 		text-align: center;
 	}
-	.copyright__layout--mob {
+	.copyright {
 		padding-top: 44px;
 		padding-bottom: 44px;
 	}
 }
 
 @media screen and(min-width:768px) {
-	.copyright.copyright__layout--mob {
+	.copyright {
 		padding-top: 56px;
 		padding-bottom: 56px;
 	}
@@ -212,23 +198,59 @@
 	}
 }
 
-@media screen and (min-width: 1200px) {
-	.footer__block {
-		padding-left: 15px;
-		padding-right: 15px;
+.footer__block {
+	margin-left: auto;
+	margin-right: auto;
+
+	@media screen and(min-width:480px) {
+		width: 480px;
+	}
+
+	@media screen and(min-width: 768px) {
+		width: 768px;
+	}
+	@media screen and (min-width: 1200px) {
+		width: 1200px;
 		display: flex;
-		margin-left: auto;
-		margin-right: auto;
 
 		justify-content: center;
-	}
-	.footer__element {
-		width: calc((100% - 30px) / 2);
+		padding-left: 15px;
+		padding-right: 15px;
+		background-image: url(../images/footer-des.png);
+		background-size: 50%;
+		background-position: right;
+		background-repeat: no-repeat;
 	}
 
-	.footer__element.footer__element--with-bg.layout.layout--dk {
-		padding-left: 100px;
+	.footer__element {
+		@media screen and (max-width: 767px) {
+			padding-left: 31px;
+			padding-right: 31px;
+		}
+
+		@media screen and(min-width: 768px) and(max-width: 1199px) {
+			padding-left: 39px;
+			padding-left: 39px;
+		}
+
+		@media screen and(min-width: 1200px) {
+			width: calc((100% - 30px) / 2);
+		}
+		&--with-bg {
+			background-image: url(../images/footer-mob.png);
+			background-repeat: no-repeat;
+
+			background-position: center;
+
+			@media screen and (min-width: 768px) {
+				background-image: url(../images/footer-tab.png);
+			}
+			@media screen and (min-width: 1200px) {
+				background-image: none;
+			}
+		}
 	}
+
 	.form {
 		padding-right: 25px;
 	}
