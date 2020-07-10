@@ -482,11 +482,14 @@ img {
   }
 }
 @media screen and (max-width: 767px) {
-  .nav__item:not(:last-child), .nav .aside-media__item:not(:last-child), .nav .tel {
+  .nav__item:not(:last-child),
+.nav .aside-media__item:not(:last-child),
+.nav .tel {
     margin-bottom: 24px;
   }
 }
-.nav-list__link:hover, .nav .nav-list__link:focus {
+.nav-list__link:hover,
+.nav .nav-list__link:focus {
   color: #ff6c00;
 }
 
@@ -517,7 +520,7 @@ img {
     position: absolute;
     bottom: 264px;
     left: -264px;
-    rotate: 270deg;
+    transform: rotate(270deg);
     display: flex;
     padding-top: 76px;
     width: 688px;
@@ -875,19 +878,10 @@ img {
 
 .price-item {
   display: flex;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 .price-item:last-child {
   margin-bottom: 0;
-}
-
-.container.price {
-  background-image: linear-gradient(rgba(17, 19, 25, 0.8), rgba(17, 19, 25, 0.8)), url(/slider2-mob@2x.c7714807.jpg);
-  background-repeat: no-repeat;
-  padding-top: 84px;
-  padding-bottom: 84px;
-  position: relative;
-  z-index: 1;
 }
 
 @media screen and (min-width: 1200px) {
@@ -923,20 +917,33 @@ img {
   padding-bottom: 0px;
 }
 
+.container.price {
+  background-image: linear-gradient(rgba(17, 19, 25, 0.8), rgba(17, 19, 25, 0.8)), url(/slider2-mob@2x.c7714807.jpg);
+  background-repeat: no-repeat;
+  padding-top: 84px;
+  padding-bottom: 84px;
+  position: relative;
+  z-index: 1;
+}
+
 @media screen and (min-width: 480px) {
   .container.price {
-    padding-top: 100px;
-    padding-bottom: 100px;
     background-image: linear-gradient(rgba(17, 19, 25, 0.8), rgba(17, 19, 25, 0.8)), url(/slider2-tab.13e7455a.jpg);
   }
 }
+
 @media screen and (min-width: 768px) {
   .container.price {
+    padding-top: 100px;
+    padding-bottom: 100px;
     background-image: linear-gradient(rgba(17, 19, 25, 0.8), rgba(17, 19, 25, 0.8)), url(/slider2-tab@2x.797aadcd.jpg);
   }
 }
+
 @media screen and (min-width: 1200px) {
   .container.price {
+    padding-top: 130px;
+    padding-bottom: 130px;
     background-image: none;
   }
 
@@ -1307,6 +1314,10 @@ img {
   margin-right: 20px;
 }
 
+.contact__icon.icon-map {
+  margin-top: 6px;
+}
+
 .form__label {
   display: block;
   position: relative;
@@ -1327,12 +1338,24 @@ img {
   resize: none;
 }
 
+.address__item {
+  display: flex;
+}
 .address__item:not(:last-child) {
   margin-bottom: 20px;
 }
-
 .address__item:last-child {
   margin-bottom: 44px;
+}
+
+@media screen and (min-width: 1200px) {
+  .address__items {
+    margin-bottom: 70px;
+  }
+}
+
+.address-text {
+  width: 230px;
 }
 
 .copyright__text {
