@@ -184,16 +184,7 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"sass/main.scss":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"./../images/slider/slider-mob.jpg":[["slider-mob.f5056d0c.jpg","images/slider/slider-mob.jpg"],"images/slider/slider-mob.jpg"],"./../images/slider-tab.jpg":[["slider-tab.2d954bcf.jpg","images/slider-tab.jpg"],"images/slider-tab.jpg"],"./../images/slider-des.jpg":[["slider-des.da3a530e.jpg","images/slider-des.jpg"],"images/slider-des.jpg"],"./../images/slider2-mob.png":[["slider2-mob.cdfc7f25.png","images/slider2-mob.png"],"images/slider2-mob.png"],"./../images/slider2-tab.png":[["slider2-tab.2fd569a7.png","images/slider2-tab.png"],"images/slider2-tab.png"],"./../images/slider2-des.png":[["slider2-des.6ecb2890.png","images/slider2-des.png"],"images/slider2-des.png"],"./../images/footer-mob.png":[["footer-mob.71d0a116.png","images/footer-mob.png"],"images/footer-mob.png"],"./../images/footer-mob@2x.png":[["footer-mob@2x.0e22b5c3.png","images/footer-mob@2x.png"],"images/footer-mob@2x.png"],"./../images/footer-tab.png":[["footer-tab.09e351df.png","images/footer-tab.png"],"images/footer-tab.png"],"./../images/footer-tab@2x.png":[["footer-tab@2x.33e29834.png","images/footer-tab@2x.png"],"images/footer-tab@2x.png"],"./../images/footer-des.png":[["footer-des.3cc32e3e.png","images/footer-des.png"],"images/footer-des.png"],"./../images/footer-des@2x.png":[["footer-des@2x.cdc80aa1.png","images/footer-des@2x.png"],"images/footer-des@2x.png"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.js":[function(require,module,exports) {
-"use strict";
-
-require("./sass/main.scss");
-},{"./sass/main.scss":"sass/main.scss"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -397,5 +388,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
-//# sourceMappingURL=/src.e31bb0bc.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
+//# sourceMappingURL=/index.js.map
