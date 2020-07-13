@@ -117,83 +117,18 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
-var bundleURL = null;
-
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
-  }
-
-  return bundleURL;
-}
-
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
-
-    if (matches) {
-      return getBaseURL(matches[0]);
-    }
-  }
-
-  return '/';
-}
-
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
-}
-
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-},{}],"../node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
-var bundle = require('./bundle-url');
-
-function updateLink(link) {
-  var newLink = link.cloneNode();
-
-  newLink.onload = function () {
-    link.remove();
-  };
-
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
-
-var cssTimeout = null;
-
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
-  }
-
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
-
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
-      }
-    }
-
-    cssTimeout = null;
-  }, 50);
-}
-
-module.exports = reloadCSS;
-},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"sass/main.scss":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"./../images/slider/slider-mob.jpg":[["slider-mob.f5056d0c.jpg","images/slider/slider-mob.jpg"],"images/slider/slider-mob.jpg"],"./../images/slider-mob@2x.jpg":[["slider-mob@2x.a4a6ba80.jpg","images/slider-mob@2x.jpg"],"images/slider-mob@2x.jpg"],"./../images/slider-tab.jpg":[["slider-tab.2d954bcf.jpg","images/slider-tab.jpg"],"images/slider-tab.jpg"],"./../images/slider-tab@2x.jpg":[["slider-tab@2x.a68fe45c.jpg","images/slider-tab@2x.jpg"],"images/slider-tab@2x.jpg"],"./../images/slider-des.jpg":[["slider-des.da3a530e.jpg","images/slider-des.jpg"],"images/slider-des.jpg"],"./../images/slider-des@2x.jpg":[["slider-des@2x.7dab952e.jpg","images/slider-des@2x.jpg"],"images/slider-des@2x.jpg"],"./../images/price/price-mob.png":[["price-mob.7efe8583.png","images/price/price-mob.png"],"images/price/price-mob.png"],"./../images/price/price-mob@2x.png":[["price-mob@2x.42374134.png","images/price/price-mob@2x.png"],"images/price/price-mob@2x.png"],"./../images/price/price-tab.png":[["price-tab.06f8fad7.png","images/price/price-tab.png"],"images/price/price-tab.png"],"./../images/price/price-tab@2x.png":[["price-tab@2x.2c8446b7.png","images/price/price-tab@2x.png"],"images/price/price-tab@2x.png"],"./../images/price/price-des.png":[["price-des.8b29c680.png","images/price/price-des.png"],"images/price/price-des.png"],"./../images/price/price-des@2x.png":[["price-des@2x.3fe74a92.png","images/price/price-des@2x.png"],"images/price/price-des@2x.png"],"./../images/footer-mob.png":[["footer-mob.71d0a116.png","images/footer-mob.png"],"images/footer-mob.png"],"./../images/footer-mob@2x.png":[["footer-mob@2x.0e22b5c3.png","images/footer-mob@2x.png"],"images/footer-mob@2x.png"],"./../images/footer-tab.png":[["footer-tab.09e351df.png","images/footer-tab.png"],"images/footer-tab.png"],"./../images/footer-tab@2x.png":[["footer-tab@2x.33e29834.png","images/footer-tab@2x.png"],"images/footer-tab@2x.png"],"./../images/footer-des.png":[["footer-des.3cc32e3e.png","images/footer-des.png"],"images/footer-des.png"],"./../images/footer-des@2x.png":[["footer-des@2x.cdc80aa1.png","images/footer-des@2x.png"],"images/footer-des@2x.png"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.js":[function(require,module,exports) {
-"use strict";
-
-require("./sass/main.scss");
-},{"./sass/main.scss":"sass/main.scss"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+})({"menu.js":[function(require,module,exports) {
+(function () {
+  var menuBtnRef = document.querySelector("[data-menu-button]");
+  var mobileMenuRef = document.querySelector("[data-menu]");
+  menuBtnRef.addEventListener("click", function () {
+    var expanded = menuBtnRef.getAttribute("aria-expanded") === "true" || false;
+    menuBtnRef.classList.toggle("is-open");
+    menuBtnRef.setAttribute("aria-expanded", !expanded);
+    mobileMenuRef.classList.toggle("is-open");
+  });
+})();
+},{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -397,5 +332,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
-//# sourceMappingURL=/src.e31bb0bc.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","menu.js"], null)
+//# sourceMappingURL=/menu.234110a1.js.map
