@@ -407,17 +407,27 @@ picture {
 }
 
 .menu-wrap {
-  display: none;
+  width: 100%;
   color: #303030;
   font-weight: 600;
   font-size: 18px;
   line-height: 1.4;
   letter-spacing: 0.1em;
 }
+@media screen and (max-width: 767px) {
+  .menu-wrap {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    display: flex;
+  }
+}
 @media screen and (min-width: 768px) {
   .menu-wrap {
-    display: block;
-    width: 100%;
     margin-left: 64px;
     color: #ffffff;
     font-size: 12px;
@@ -427,16 +437,18 @@ picture {
 
 @media screen and (max-width: 767px) {
   .menu-wrap.is-open {
-    display: flex;
     position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
     overflow: hidden;
     z-index: 5;
+    opacity: 1;
+    pointer-events: auto;
     background-color: rgba(25, 28, 38, 0.2);
     box-shadow: -1px 0px 3px rgba(0, 0, 0, 0.16), -2px 0px 4px rgba(0, 0, 0, 0.08), -4px 0px 8px rgba(0, 0, 0, 0.04);
+  }
+}
+@media screen and (max-width: 767px) {
+  .menu-wrap.is-open .menu {
+    transform: translateX(0);
   }
 }
 
@@ -449,6 +461,8 @@ picture {
 }
 @media screen and (max-width: 767px) {
   .menu {
+    transform: translateX(100%);
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
     margin-left: auto;
     padding-top: 48px;
     padding-left: 40px;
